@@ -1,0 +1,10 @@
+flask==3.0.0
+flask-cors==4.0.0
+
+# Dépendances LangChain pour Google Gemini (VERSIONS MISES À JOUR)
+langchain>=0.2.0
+langchain-google-genai>=4.0.0
+langchain-core>=0.2.0
+
+# Dépendances supplémentaires pour LangChain
+google-generativeai>=0.3.0

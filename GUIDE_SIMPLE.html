@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Simple - Comment Tester Votre Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .step {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .step-number {
+            background: #6B9BD1;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        h1 {
+            color: #6B9BD1;
+        }
+        h2 {
+            color: #7FB3A3;
+            margin-top: 0;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .command {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .button {
+            background: #6B9BD1;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background: #5A8BC1;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Guide Simple : Comment Tester Votre Site Web</h1>
+    
+    <div class="step">
+        <h2><span class="step-number">1</span> Ouvrir le Terminal</h2>
+        <p><strong>Windows :</strong></p>
+        <ul>
+            <li>Allez dans le dossier <code>C:\Users\LENOVO\Desktop\Hackathon</code></li>
+            <li>Faites <strong>clic droit</strong> dans le dossier (pas sur un fichier)</li>
+            <li>Choisissez <strong>"Ouvrir dans le terminal"</strong> ou <strong>"Ouvrir dans PowerShell"</strong></li>
+        </ul>
+        <p>OU</p>
+        <ul>
+            <li>Appuyez sur <code>Windows + R</code></li>
+            <li>Tapez <code>cmd</code> et appuyez sur Entrée</li>
+            <li>Tapez <code>cd C:\Users\LENOVO\Desktop\Hackathon</code></li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2><span class="step-number">2</span> Installer les Dépendances</h2>
+        <p>Dans le terminal, copiez et collez cette commande :</p>
+        <div class="command">pip install -r requirements.txt</div>
+        <p>⏳ Attendez que l'installation se termine (2-5 minutes)</p>
+        <div class="success">
+            ✅ Vous verrez "Successfully installed..." quand c'est terminé
+        </div>
+    </div>
+
+    <div class="step">
+        <h2><span class="step-number">3</span> Démarrer le Serveur</h2>
+        <p><strong>Option A : Méthode Simple (Windows)</strong></p>
+        <p>Double-cliquez sur le fichier : <code>start_server.bat</code></p>
+        <p><strong>Option B : Méthode Manuelle</strong></p>
+        <p>Dans le terminal, tapez :</p>
+        <div class="command">python app.py</div>
+        <div class="warning">
+            ⚠️ <strong>IMPORTANT :</strong> Gardez cette fenêtre ouverte ! Ne la fermez pas.
+        </div>
+        <div class="success">
+            ✅ Vous devriez voir : "✅ Chatbot LangChain initialisé avec succès!"<br>
+            ✅ Et : "🌐 Serveur démarré sur http://localhost:5000"
+        </div>
+    </div>
+
+    <div class="step">
+        <h2><span class="step-number">4</span> Ouvrir Votre Site Web</h2>
+        <p><strong>Méthode 1 : Double-clic</strong></p>
+        <ul>
+            <li>Allez dans le dossier <code>C:\Users\LENOVO\Desktop\Hackathon</code></li>
+            <li>Double-cliquez sur le fichier <strong>Hackathon.html</strong></li>
+            <li>Il s'ouvrira dans votre navigateur (Chrome, Firefox, Edge, etc.)</li>
+        </ul>
+        <p><strong>Méthode 2 : Glisser-déposer</strong></p>
+        <ul>
+            <li>Ouvrez votre navigateur</li>
+            <li>Glissez le fichier <strong>Hackathon.html</strong> dans la fenêtre du navigateur</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2><span class="step-number">5</span> Tester le Chatbot</h2>
+        <ol>
+            <li>Sur votre site web, cherchez le <strong>bouton de chat</strong> en bas à droite (icône 💬)</li>
+            <li>Cliquez dessus pour ouvrir le chat</li>
+            <li>Tapez un message, par exemple : <code>"Bonjour, je me sens triste"</code></li>
+            <li>Appuyez sur <strong>Entrée</strong> ou cliquez sur <strong>"Send"</strong></li>
+            <li>Le chatbot devrait répondre en utilisant Google Gemini ! 🎉</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>✅ Vérification</h2>
+        <p>Si tout fonctionne, vous devriez voir :</p>
+        <ul>
+            <li>✅ Dans le terminal : "Serveur démarré sur http://localhost:5000"</li>
+            <li>✅ Dans le navigateur : Votre site MindBalance s'affiche</li>
+            <li>✅ Le bouton chat 💬 est visible en bas à droite</li>
+            <li>✅ Le chatbot répond à vos messages</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>🆘 Problèmes ?</h2>
+        <p><strong>"python n'est pas reconnu"</strong></p>
+        <ul>
+            <li>Python n'est pas installé → Installez-le depuis python.org</li>
+            <li>Ou essayez : <code>py app.py</code> au lieu de <code>python app.py</code></li>
+        </ul>
+        <p><strong>Le chatbot ne répond pas</strong></p>
+        <ul>
+            <li>Vérifiez que le serveur Python est toujours ouvert (terminal)</li>
+            <li>Vérifiez la console du navigateur (appuyez sur F12)</li>
+        </ul>
+        <p><strong>Le site ne s'ouvre pas</strong></p>
+        <ul>
+            <li>Clic droit sur Hackathon.html → "Ouvrir avec" → Choisissez votre navigateur</li>
+        </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="Hackathon.html" class="button">Ouvrir Mon Site Web</a>
+        <a href="DEMARRAGE_RAPIDE.txt" class="button">Guide Texte</a>
+    </div>
+</body>
+</html>

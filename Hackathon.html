@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindBalance - Your Wellbeing Companion</title>
+    <link rel="stylesheet" href="Hackathon.css">
+</head>
+
+<body>
+    <!-- Landing Page -->
+    <section id="landing" class="landing-page active">
+        <div class="landing-container">
+            <div class="landing-hero">
+                <div class="landing-logo">
+                    <span class="landing-logo-icon">🧘</span>
+                    <h1 class="landing-title">MindBalance</h1>
+                </div>
+                <p class="landing-tagline">Your gentle companion for mental wellbeing and personal growth</p>
+            </div>
+
+            <div class="landing-content">
+                <div class="landing-section">
+                    <h2 class="landing-section-title">What is MindBalance?</h2>
+                    <p class="landing-text">
+                        MindBalance is a supportive web platform designed to help you monitor your wellbeing,
+                        improve focus, and reduce stress. We believe in taking small, gentle steps toward
+                        better mental health—no pressure, no judgment, just support.
+                    </p>
+                </div>
+
+                <div class="landing-features">
+                    <div class="landing-feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Wellbeing Portal</h3>
+                        <p>Track your daily mood, focus, and stress levels in a safe, private space.</p>
+                    </div>
+                    <div class="landing-feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>Mood-Aware Chat</h3>
+                        <p>Connect with a supportive chat companion that adapts to how you're feeling.</p>
+                    </div>
+                    <div class="landing-feature-card">
+                        <div class="feature-icon">⭐</div>
+                        <h3>Reward System</h3>
+                        <p>Earn points through consistent self-care and positive habits.</p>
+                    </div>
+                    <div class="landing-feature-card">
+                        <div class="feature-icon">🛍️</div>
+                        <h3>Wellbeing Marketplace</h3>
+                        <p>Explore optional products and resources to support your journey.</p>
+                    </div>
+                </div>
+
+                <div class="landing-section">
+                    <h2 class="landing-section-title">Our Approach</h2>
+                    <div class="landing-principles">
+                        <div class="principle-item">
+                            <span class="principle-icon">🤝</span>
+                            <div>
+                                <h4>Supportive, Not Diagnostic</h4>
+                                <p>We provide gentle guidance, not medical advice or diagnoses.</p>
+                            </div>
+                        </div>
+                        <div class="principle-item">
+                            <span class="principle-icon">🔄</span>
+                            <div>
+                                <h4>You're in Control</h4>
+                                <p>Everything is optional. You choose what feels right for you.</p>
+                            </div>
+                        </div>
+                        <div class="principle-item">
+                            <span class="principle-icon">💙</span>
+                            <div>
+                                <h4>No Pressure</h4>
+                                <p>Take your time. There's no right or wrong way to use MindBalance.</p>
+                            </div>
+                        </div>
+                        <div class="principle-item">
+                            <span class="principle-icon">🌱</span>
+                            <div>
+                                <h4>Small Steps, Big Impact</h4>
+                                <p>We believe in the power of consistent, gentle self-care.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="landing-cta">
+                    <button class="btn-landing" id="enterAppBtn" type="button">
+                        <span>Enter MindBalance</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                    <p class="landing-note">Your journey starts with a single step. Welcome! 🌟</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="mainNav" style="display: none;">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🧘</span>
+                <span class="logo-text">MindBalance</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#dashboard" class="nav-link active">Dashboard</a></li>
+                <li><a href="#games" class="nav-link">Games</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+                <li><a href="#rewards" class="nav-link">Rewards</a></li>
+                <li><a href="#marketplace" class="nav-link">Marketplace</a></li>
+                <li><a href="#donations" class="nav-link">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainApp" style="display: none;">
+        <!-- 1. Landing / Dashboard -->
+        <section id="dashboard" class="section">
+            <div class="container">
+                <div class="welcome-card">
+                    <h1 class="welcome-title">Welcome back! 👋</h1>
+                    <p class="welcome-subtitle">Let's check in on your wellbeing today</p>
+                </div>
+
+                <!-- Mood Selector Component -->
+                <div class="mood-selector-card">
+                    <h2 class="mood-selector-title">How are you feeling right now?</h2>
+                    <p class="mood-selector-subtitle">Select what feels right for you - you can change this anytime</p>
+                    <div class="mood-options">
+                        <button class="mood-option" data-mood="low" data-emoji="😞">
+                            <span class="mood-emoji">😞</span>
+                            <span class="mood-label">Low</span>
+                        </button>
+                        <button class="mood-option" data-mood="neutral" data-emoji="😐">
+                            <span class="mood-emoji">😐</span>
+                            <span class="mood-label">Neutral</span>
+                        </button>
+                        <button class="mood-option active" data-mood="good" data-emoji="🙂">
+                            <span class="mood-emoji">🙂</span>
+                            <span class="mood-label">Good</span>
+                        </button>
+                    </div>
+                    <div class="mood-feedback" id="moodFeedback" style="display: none;">
+                        <p class="mood-feedback-text"></p>
+                    </div>
+                </div>
+
+                <!-- Daily Wellbeing Summary -->
+                <div class="wellbeing-summary">
+                    <h2 class="section-title">Today's Wellbeing Summary</h2>
+                    <div class="summary-grid">
+                        <div class="summary-card mood-card">
+                            <div class="card-icon">😊</div>
+                            <h3>Mood</h3>
+                            <div class="mood-indicator" id="moodIndicator">
+                                <span class="mood-value">Good</span>
+                                <div class="mood-bar">
+                                    <div class="mood-fill good"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="summary-card focus-card">
+                            <div class="card-icon">🎯</div>
+                            <h3>Focus Level</h3>
+                            <div class="progress-indicator">
+                                <span class="progress-value">75%</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="summary-card stress-card">
+                            <div class="card-icon">🌿</div>
+                            <h3>Stress Level</h3>
+                            <div class="progress-indicator">
+                                <span class="progress-value">Low</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill low-stress" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wellbeing Progress Card -->
+                <div class="progress-card">
+                    <div class="progress-header">
+                        <h2>Wellbeing Progress</h2>
+                        <span class="progress-badge">This Week</span>
+                    </div>
+                    <div class="progress-visual">
+                        <div class="progress-circle">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="ring-background" cx="60" cy="60" r="50"></circle>
+                                <circle class="ring-progress" cx="60" cy="60" r="50" style="stroke-dashoffset: 157">
+                                </circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="progress-percent">68%</span>
+                                <span class="progress-label">Complete</span>
+                            </div>
+                        </div>
+                        <div class="progress-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Check-ins</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Focus Sessions</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Exercises</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="exploreTipsBtn">Explore Tips</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Personalized Resources Section -->
+        <section id="resources" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Personalized Resources</h2>
+                    <p class="section-subtitle" id="resourcesSubtitle">Based on how you're feeling, these may help</p>
+                </div>
+
+                <div class="resources-grid" id="resourcesGrid">
+                    <!-- Low Mood Resources -->
+                    <div class="resource-card breathing-card" data-mood="low">
+                        <div class="resource-icon">🫁</div>
+                        <h3>Breathing Exercises</h3>
+                        <p>Gentle breathing techniques to help you find calm. Take your time, there's no rush.</p>
+                        <div class="resource-meta">
+                            <span class="resource-duration">5 min</span>
+                            <span class="resource-difficulty">Easy</span>
+                        </div>
+                        <button class="btn-secondary">Try Now</button>
+                    </div>
+
+                    <div class="resource-card grounding-card" data-mood="low">
+                        <div class="resource-icon">🌍</div>
+                        <h3>Grounding Technique</h3>
+                        <p>A simple exercise to help you feel more present and connected to the moment.</p>
+                        <div class="resource-meta">
+                            <span class="resource-duration">3 min</span>
+                            <span class="resource-difficulty">Easy</span>
+                        </div>
+                        <button class="btn-secondary">Try Now</button>
+                    </div>
+
+                    <div class="resource-card support-card" data-mood="low">
+                        <div class="resource-icon">💙</div>
+                        <h3>Supportive Message</h3>
+                        <p>A gentle reminder that you're not alone, and it's okay to take things one step at a time.</p>
+                        <div class="resource-meta">
+                            <span class="resource-duration">2 min</span>
+                            <span class="resource-difficulty">Easy</span>
+                        </div>
+                        <button class="btn-secondary">Read Now</button>
+                    </div>
+
+                    <!-- Neutral Mood Resources -->
+                    <div class="resource-card focus-card" data-mood="neutral">
+                        <div class="resource-icon">🎯</div>
+                        <h3>Focus Tips</h3>
+                        <p>Practical techniques to enhance your concentration and maintain clarity throughout your day.
+                        </p>
+                        <div class="resource-meta">
+                            <span class="resource-duration">5 min</span>
+                            <span class="resource-difficulty">Easy</span>
+                        </div>
+                        <button class="btn-secondary">Try Now</button>
+                    </div>
+
+                    <div class="resource-card reflection-card" data-mood="neutral">
+                        <div class="resource-icon">✨</div>
+                        <h3>Light Reflection Exercise</h3>
+                        <p>A brief moment of self-reflection to help you check in with yourself and your needs.</p>
+                        <div class="resource-meta">
+                            <span class="resource-duration">4 min</span>
+                            <span class="resource-difficulty">Easy</span>
+                        </div>
+                        <button class="btn-secondary">Try Now</button>
+                    </div>
+
+                    <div class="resource-card productivity-card" data-mood="neutral">
+                        <div class="resource-icon">🔄</div>
+                        <h3>Productivity Reset</h3>
+                        <p>Simple strategies to refresh your energy and approach your tasks with renewed focus.</p>
+                        <div class="resource-meta">
+                            <span class="resource-duration">6 min</span>
+                            <span class="resource-difficulty">Easy</span>
+                        </div>
+                        <button class="btn-secondary">Try Now</button>
+                    </div>
+
+                    <!-- Good Mood Resources -->
+                    <div class="resource-card gratitude-card" data-mood="good">
+                        <div class="resource-icon">🙏</div>
+                        <h3>Gratitude Activity</h3>
+                        <p>Take a moment to acknowledge the positive aspects of your day and what you're grateful for.
+                        </p>
+                        <div class="resource-meta">
+                            <span class="resource-duration">3 min</span>
+                            <span class="resource-difficulty">Easy</span>
+                        </div>
+                        <button class="btn-secondary">Try Now</button>
+                    </div>
+
+                    <div class="resource-card energy-card" data-mood="good">
+                        <div class="resource-icon">⚡</div>
+                        <h3>Energy Management Tips</h3>
+                        <p>Learn how to maintain and channel your positive energy effectively throughout the day.</p>
+                        <div class="resource-meta">
+                            <span class="resource-duration">5 min</span>
+                            <span class="resource-difficulty">Easy</span>
+                        </div>
+                        <button class="btn-secondary">Try Now</button>
+                    </div>
+
+                    <div class="resource-card challenge-card" data-mood="good">
+                        <div class="resource-icon">🎮</div>
+                        <h3>Optional Focus Challenge</h3>
+                        <p>A fun, optional activity to test and strengthen your focus skills. No pressure, just for fun!
+                        </p>
+                        <div class="resource-meta">
+                            <span class="resource-duration">10 min</span>
+                            <span class="resource-difficulty">Medium</span>
+                        </div>
+                        <button class="btn-secondary">Try Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Reward System UI -->
+        <section id="rewards" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Wellbeing Points</h2>
+                    <p class="section-subtitle">Points are earned through consistent self-care and positive habits.</p>
+                </div>
+
+                <div class="rewards-dashboard">
+                    <div class="points-card">
+                        <div class="points-display">
+                            <span class="points-icon">⭐</span>
+                            <div class="points-info">
+                                <span class="points-label">Your Points</span>
+                                <span class="points-value" id="pointsValue">248</span>
+                            </div>
+                        </div>
+                        <div class="points-progress">
+                            <div class="progress-bar-large">
+                                <div class="progress-fill-large" style="width: 62%"></div>
+                            </div>
+                            <div class="progress-labels">
+                                <span>248 / 400</span>
+                                <span>Next Reward: 400 points</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="points-history">
+                        <h3>Recent Activity</h3>
+                        <div class="history-list">
+                            <div class="history-item">
+                                <div class="history-icon">✅</div>
+                                <div class="history-details">
+                                    <span class="history-action">Daily check-in</span>
+                                    <span class="history-date">Today</span>
+                                </div>
+                                <span class="history-points positive">+5</span>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-icon">🎯</div>
+                                <div class="history-details">
+                                    <span class="history-action">Focus session</span>
+                                    <span class="history-date">Yesterday</span>
+                                </div>
+                                <span class="history-points positive">+3</span>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-icon">💪</div>
+                                <div class="history-details">
+                                    <span class="history-action">Exercise completed</span>
+                                    <span class="history-date">2 days ago</span>
+                                </div>
+                                <span class="history-points positive">+5</span>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-icon">📖</div>
+                                <div class="history-details">
+                                    <span class="history-action">Resource explored</span>
+                                    <span class="history-date">3 days ago</span>
+                                </div>
+                                <span class="history-points positive">+2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Wellbeing Marketplace -->
+        <section id="marketplace" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Wellbeing Marketplace</h2>
+                    <p class="section-subtitle">Optional wellbeing products to support your journey</p>
+                </div>
+
+                <div class="marketplace-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">🛍️</div>
+                            <span class="discount-badge">-20% with points</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Anti-Stress Fidget Set</h3>
+                            <p>Calming tools to help manage stress and anxiety throughout your day.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$24.99</span>
+                                <button class="btn-product">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">📔</div>
+                            <span class="discount-badge">-15% with points</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Gratitude Journal</h3>
+                            <p>A beautiful journal to track your thoughts, gratitude, and daily reflections.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$18.99</span>
+                                <button class="btn-product">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">📚</div>
+                            <span class="discount-badge">-10% with points</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Mindfulness Guide Book</h3>
+                            <p>An inspiring guide to mindfulness practices and mental wellbeing techniques.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$29.99</span>
+                                <button class="btn-product">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">🕯️</div>
+                            <span class="discount-badge">-25% with points</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Calming Aromatherapy Set</h3>
+                            <p>Essential oils and diffuser to create a peaceful, relaxing environment.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$34.99</span>
+                                <button class="btn-product">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">🎧</div>
+                            <span class="discount-badge">-20% with points</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Noise-Canceling Headphones</h3>
+                            <p>Create your own quiet space for meditation and focus sessions.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$79.99</span>
+                                <button class="btn-product">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">🌱</div>
+                            <span class="discount-badge">-15% with points</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Indoor Plant Starter Kit</h3>
+                            <p>Bring nature indoors with easy-care plants that promote a calming atmosphere.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$19.99</span>
+                                <button class="btn-product">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Donations Section -->
+        <!-- 5. Games Section -->
+        <section id="games" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Mindful Games</h2>
+                    <p class="section-subtitle">Take a break and improve your focus with our interactive games.</p>
+                </div>
+
+                <div class="game-container">
+                    <div class="game-card">
+                        <div class="game-header">
+                            <h3>Focus Dot</h3>
+                            <div class="game-stats">
+                                <span class="game-score">Score: <span id="scoreValue">0</span></span>
+                                <span class="game-timer">Time: <span id="timeValue">30</span>s</span>
+                            </div>
+                        </div>
+                        <div class="game-area" id="gameArea">
+                            <div class="game-overlay" id="gameOverlay">
+                                <h3>Ready to Focus?</h3>
+                                <p>Click the dots as they appear. Be quick!</p>
+                                <button class="btn-primary" id="startGameBtn">Start Game</button>
+                            </div>
+                            <div class="game-target" id="gameTarget" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="donations" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Make a Difference</h2>
+                    <p class="section-subtitle">Support mental health initiatives and create positive social impact</p>
+                </div>
+
+                <div class="donations-grid">
+                    <div class="donation-card">
+                        <div class="donation-icon">💝</div>
+                        <h3>Donate Money</h3>
+                        <p>Your financial contribution helps provide mental health resources to those in need.</p>
+                        <div class="donation-options">
+                            <button class="donation-amount">$10</button>
+                            <button class="donation-amount">$25</button>
+                            <button class="donation-amount">$50</button>
+                            <button class="donation-amount">Custom</button>
+                        </div>
+                        <button class="btn-primary">Donate Now</button>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="donation-icon">⭐</div>
+                        <h3>Donate Points</h3>
+                        <p>Convert your wellbeing points into support for mental health programs and community
+                            initiatives.</p>
+                        <div class="points-donation">
+                            <div class="points-input-group">
+                                <input type="number" class="points-input" placeholder="Enter points" min="1" max="248">
+                                <span class="points-label-small">points</span>
+                            </div>
+                            <p class="points-conversion">100 points = $1 donation value</p>
+                        </div>
+                        <button class="btn-primary">Donate Points</button>
+                    </div>
+
+                    <div class="donation-card impact-card">
+                        <div class="donation-icon">🌍</div>
+                        <h3>Impact Stories</h3>
+                        <div class="impact-stats">
+                            <div class="impact-stat">
+                                <span class="impact-number">1,247</span>
+                                <span class="impact-label">People Helped</span>
+                            </div>
+                            <div class="impact-stat">
+                                <span class="impact-number">$45,230</span>
+                                <span class="impact-label">Raised This Year</span>
+                            </div>
+                            <div class="impact-stat">
+                                <span class="impact-number">23</span>
+                                <span class="impact-label">Programs Supported</span>
+                            </div>
+                        </div>
+                        <p class="impact-text">Together, we're making mental health support more accessible to everyone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-button" id="chatButton">
+            <span class="chat-icon">💬</span>
+        </div>
+        <div class="chat-panel" id="chatPanel">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <span class="chat-bot-icon">🤖</span>
+                    <div>
+                        <h3>EchoMind Assistant</h3>
+                        <p class="chat-status">Online</p>
+                    </div>
+                </div>
+                <button class="chat-close" id="chatClose">×</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Hi, I'm here to listen. How are you feeling today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-tone-selector">
+                <span>Tone:</span>
+                <button class="tone-btn active" data-tone="supportive">Supportive</button>
+                <button class="tone-btn" data-tone="friendly">Friendly</button>
+                <button class="tone-btn" data-tone="playful">Playful</button>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+                <button class="chat-send" id="chatSend">Send</button>
+            </div>
+            <div class="chat-quick-actions">
+                <button class="quick-action-btn" data-action="exercise">Try a calming exercise</button>
+                <button class="quick-action-btn" data-action="game">Try a focus game</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Hackathon.js"></script>
+</body>
+
+</html>
